@@ -62,8 +62,7 @@ pigment {
         [ 0 2*White ]
         [ 0.2 Clear ]
     }
-    scale .004
-    translate 5*x
+    scale .05
 }
 
 // Stars from above on black background (as one pigment)
@@ -75,8 +74,7 @@ pigment {
         [ 0 2*White ]
         [ 0.2 Black ]
     }
-    scale .004
-    translate 5*x
+    scale .05
 }
 
 #end
