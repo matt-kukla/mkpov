@@ -5,8 +5,8 @@
     Description: Various macros for positioning objects.
 */            
 
-#ifndef(Nroot_Inc_Temp)
-#declare Nroot_Inc_Temp = version;
+#ifndef(Positioning_Inc_Temp)
+#declare Positioning_Inc_Temp = version;
 #version 3.7;
 
 /* Place a copy of object Ob at each of the Nth roots of unity, 
