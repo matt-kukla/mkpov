@@ -24,4 +24,23 @@ union {
     #end
 }
 #end
+
+/* Create N copies of object Ob in a row, starting at Start and 
+   spaced apart by the vector Space. */
+
+#macro Row(Ob, Start, N, Space) 
+#local K = 0;
+
+union {
+    #while (K < N)
+    object { 
+        Ob
+        translate Start + K*Space
+    }
+    #declare K = K + 1;
+    #end
+}
+
+#end
+
 #end
