@@ -206,4 +206,30 @@ texture {
     scale 2
 }
 
+#declare MK_Stone13 = 
+texture {                                                                  
+    pigment {                                                              
+        agate                                                            
+        turbulence 0.5                                                     
+        color_map {                                                        
+            [0.1, 0.9 color rgb <0.2, 0.576, 0.958> color Gray90]                           
+        }                                                                  
+    }                                                                      
+    scale 3*x                                                              
+}
+
+#declare MK_Stone14 = 
+texture {
+    pigment {                                                              
+        granite                                                            
+        turbulence 1                                                       
+        color_map {                                                        
+            [0.0 rgb <0.1, 0.6, 0.1>]                                      
+            [0.8 rgb <0.0, 0.2, 0.0>]                                      
+        }                                                                  
+        scale 3
+        }
+}
+
+
 #end
