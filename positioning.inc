@@ -1,7 +1,7 @@
 /*  Persistence of Vision Ray Tracer version 3.7 Include File
     File: positioning.inc
-    Author: Matt Kukla <matt.kukla@yandex.ru>
-    Last updated: June 2021 
+    Author: Matt Kukla <matt.kukla@yandex.com>
+    Last updated: January 2024
     Description: Various macros for positioning objects.
 */            
 
@@ -9,30 +9,29 @@
 #declare Positioning_Inc_Temp = version;
 #version 3.7;
 
-/* Places a copy of object Ob at each of the Nth roots of unity 
-   (at distance R from 0) in the xz-plane. */
-
-#macro N_roots(N, R, Ob)
-    N_roots_SR(N, R, Ob, 0, 0)
+/*  Place N copies of Ob evenly spaced in a circle of radius R. */
+#macro RotSpace(N, R, Ob)
+    RotSpace_SR(N, R, Ob, 0, 0)
 #end
 
-/* Places a copy of Ob at each Nth root of unity in the xz-plane.
-   Each copy of Ob is scaled by 1+S*K and rotated by R*K for each 0 <= K <= N. */
-
-#macro N_roots_SR(N, R, Ob, Sc, Rt)
+/* Place N copies of Ob evenly spaced in a circle of radius R.
+   Each copy of Ob is scaled by 1+S*K and rotated by R*K for each 0 <= K = N.
+*/
+#macro RotSpace_SR(N, R, Ob, Sc, Rt)
 #local K = 0;
 union {
-    #while (K <= N)
-        object { 
-            Ob
-            scale 1+Sc*K
-            rotate Rt*K
-            translate R*<cos((2*pi*K)/N), 0, sin((2*pi*K)/N)>
+    #while (K < N)
+        object{
+           Ob
+           rotate Rt*K
+           scale 1+Sc*K
+           translate R*x
+           rotate (K*360/N)*y
         }
         #declare K = K + 1;
     #end
 }
-#end 
+#end
 
 /* Create N copies of object Ob in a row, starting at Start and 
    spaced apart by Space. */
