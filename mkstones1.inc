@@ -215,7 +215,7 @@ texture {
         color_map {                                                        
             [0.1, 0.9 color rgb <0.2, 0.576, 0.958> color Gray90]                  }                                                                  
     }                                                                      
-    scale 3*x                                                              
+    scale <3, 1, 1> 
 }
 
 // Green agate
